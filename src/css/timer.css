@@ -1,32 +1,70 @@
-body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: red;
+}
+
+#datetime-picker,
+button {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  background-color: #f9f9f9;
-  margin: 0;
+  vertical-align: middle;
 }
 
 #datetime-picker {
-  padding: 8px 12px;
-  font-size: 16px;
-  border: 1px solid #ccc;
+  padding: 8px 16px;
+  border: 1px solid #808080;
   border-radius: 4px;
-  margin-right: 8px;
+  width: 280px;
+  height: 40px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
   color: #2e2f42;
+  margin-right: 8px;
+  outline: none;
+}
+
+#datetime-picker:hover:not(:disabled) {
+  border-color: #000;
+}
+
+#datetime-picker:focus {
+  border: 1px solid #4e75ff;
+}
+
+#datetime-picker:disabled {
+  border: 1px solid #808080;
+  background-color: #fafafa;
+  color: #808080;
+  cursor: not-allowed;
 }
 
 button {
+  border-radius: 8px;
   padding: 8px 16px;
-  font-size: 16px;
-  border: none;
-  border-radius: 4px;
+  width: 75px;
+  height: 40px;
   background-color: #4e75ff;
-  color: white;
   cursor: pointer;
-  transition: background 0.3s ease;
+  border: none;
+  color: #ffffff;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: #6c8cff;
+  transform: translateY(-1px);
 }
 
 button:disabled {
@@ -34,14 +72,17 @@ button:disabled {
   cursor: not-allowed;
 }
 
-button:hover:not(:disabled) {
-  background-color: #6c8cff;
-}
-
 .timer {
   display: flex;
+  flex-direction: row;
   gap: 24px;
-  margin-top: 30px;
+  width: 346px;
+  height: 72px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .field {
